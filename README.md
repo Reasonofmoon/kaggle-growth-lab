@@ -23,6 +23,8 @@ Each competition or dataset project will include:
 
 - Kaggle progression and badges
 - Playground competitions
+- 5-Day AI Agents Intensive with Google
+- Kaggriculture capstone preparation
 - Reusable ML workflow
 - Public learning logs
 - Developer-facing insights
@@ -52,9 +54,9 @@ assets/            Images, diagrams, and screenshots
 | Week | Focus | Kaggle Output | GitHub Output | LinkedIn Output |
 |---|---|---|---|---|
 | Week 01 | Baseline and setup | First Playground submission | Repo initialized | Why I started |
-| Week 02 | EDA | Public notebook | EDA notebook and notes | Data before model |
-| Week 03 | Validation | CV experiment | validation.py | Why validation matters |
-| Week 04 | Model comparison | Improved score | Model comparison log | What improved and what did not |
+| Week 02 | AI Agents prep | Course registration and setup | Course plan + capstone workspace | Why I am joining |
+| Week 03 | AI Agents course week | Daily assignments + capstone launch | Daily notes + Kaggriculture plan | Agents beyond chatbots |
+| Week 04 | Capstone sprint | Kaggriculture submission | Experiment log + submission notes | What the agent learned |
 
 ## Links
 
@@ -71,3 +73,8 @@ pip install -r requirements.txt
 ```
 
 When starting a new competition, copy `competitions/_template` and rename the copy to the Kaggle competition slug.
+
+## Active tracks
+
+- [AI Agents Intensive 2026](learn/ai_agents_intensive_2026/README.md)
+- [Kaggriculture Capstone](competitions/kaggriculture/README.md)

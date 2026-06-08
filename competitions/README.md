@@ -14,3 +14,7 @@ competitions/[competition-slug]/
 ```
 
 Keep raw Kaggle data outside Git. Document how to download it instead of committing files from `data/`, `input/`, or downloaded archives.
+
+## Active competition workspaces
+
+- [Kaggriculture Capstone](kaggriculture/README.md)
