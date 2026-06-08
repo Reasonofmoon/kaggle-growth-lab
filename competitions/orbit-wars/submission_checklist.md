@@ -11,7 +11,9 @@
 
 - [ ] Place submission code at `main.py`
 - [ ] Confirm `agent(obs)` exists
+- [ ] Run tutorial environment inspection cells
 - [ ] Run against `random`
+- [ ] Run self-play against `main.py`
 - [ ] Confirm no timeout or exception
 - [ ] Inspect final rewards/status
 

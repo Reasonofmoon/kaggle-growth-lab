@@ -1,0 +1,214 @@
+# 01 Orbit Wars Tutorial and Baseline Cells
+
+These cells are intended for a Kaggle Notebook or local notebook.
+
+The goal is to validate the environment and create a `main.py` that can be submitted.
+
+## Cell 1: Install and Inspect Environment
+
+```python
+!pip install --upgrade "kaggle-environments>=1.28.0"
+
+from kaggle_environments import make
+
+env = make("orbit_wars", debug=True)
+print(f"Environment: {env.name} v{env.version}")
+print(f"Players: {env.specification.agents}")
+print(f"Max steps: {env.configuration.episodeSteps}")
+```
+
+## Cell 2: Inspect Observation
+
+```python
+from kaggle_environments import make
+from kaggle_environments.envs.orbit_wars.orbit_wars import Planet, Fleet
+
+env = make("orbit_wars", debug=True)
+env.run(["random", "random"])
+
+obs = env.steps[1][0].observation
+planets = [Planet(*p) for p in obs.planets]
+
+print(f"Player: {obs.player}")
+print(f"Angular velocity: {obs.angular_velocity:.4f} rad/turn")
+print(f"Planets: {len(planets)}")
+
+for p in planets[:6]:
+    owner = f"Player {p.owner}" if p.owner >= 0 else "Neutral"
+    print(
+        f"id={p.id} owner={owner:10s} "
+        f"pos=({p.x:.1f}, {p.y:.1f}) "
+        f"r={p.radius:.1f} ships={p.ships} prod={p.production}"
+    )
+```
+
+## Cell 3: Write Project Baseline `main.py`
+
+This writes the same baseline strategy as `competitions/orbit-wars/src/main.py`.
+
+```python
+%%writefile main.py
+import math
+
+
+CENTER_X = 50.0
+CENTER_Y = 50.0
+SUN_RADIUS = 10.0
+SAFETY_MARGIN = 1.5
+
+
+def _get(obs, key, default=None):
+    if isinstance(obs, dict):
+        return obs.get(key, default)
+    return getattr(obs, key, default)
+
+
+def _distance(a, b):
+    return math.hypot(a["x"] - b["x"], a["y"] - b["y"])
+
+
+def _angle_between(source, target):
+    return math.atan2(target["y"] - source["y"], target["x"] - source["x"])
+
+
+def _planet(row):
+    return {
+        "id": int(row[0]),
+        "owner": int(row[1]),
+        "x": float(row[2]),
+        "y": float(row[3]),
+        "radius": float(row[4]),
+        "ships": int(row[5]),
+        "production": int(row[6]),
+    }
+
+
+def _segment_point_distance(ax, ay, bx, by, px, py):
+    dx = bx - ax
+    dy = by - ay
+
+    if dx == 0 and dy == 0:
+        return math.hypot(px - ax, py - ay)
+
+    t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)
+    t = max(0.0, min(1.0, t))
+    closest_x = ax + t * dx
+    closest_y = ay + t * dy
+    return math.hypot(px - closest_x, py - closest_y)
+
+
+def _crosses_sun(source, target):
+    return (
+        _segment_point_distance(
+            source["x"],
+            source["y"],
+            target["x"],
+            target["y"],
+            CENTER_X,
+            CENTER_Y,
+        )
+        <= SUN_RADIUS + SAFETY_MARGIN
+    )
+
+
+def _target_score(source, target):
+    distance = max(_distance(source, target), 1.0)
+    capture_cost = max(target["ships"] + 1, 1)
+    production_value = target["production"] * 12.0
+    return production_value / distance - capture_cost * 0.03
+
+
+def _choose_target(source, targets):
+    feasible = []
+
+    for target in targets:
+        if _crosses_sun(source, target):
+            continue
+
+        ships_needed = target["ships"] + 1
+        if source["ships"] <= ships_needed + 5:
+            continue
+
+        feasible.append(target)
+
+    if not feasible:
+        return None
+
+    return max(feasible, key=lambda target: _target_score(source, target))
+
+
+def agent(obs):
+    player = int(_get(obs, "player", 0))
+    planets = [_planet(row) for row in _get(obs, "planets", [])]
+
+    my_planets = [planet for planet in planets if planet["owner"] == player]
+    targets = [planet for planet in planets if planet["owner"] != player]
+
+    if not my_planets or not targets:
+        return []
+
+    moves = []
+
+    for source in my_planets:
+        if source["ships"] < 15:
+            continue
+
+        target = _choose_target(source, targets)
+        if target is None:
+            continue
+
+        ships_needed = target["ships"] + 1
+        max_send = max(0, source["ships"] - 8)
+        ships_to_send = min(max_send, ships_needed + 3)
+
+        if ships_to_send <= 0:
+            continue
+
+        moves.append([
+            source["id"],
+            _angle_between(source, target),
+            int(ships_to_send),
+        ])
+
+    return moves
+```
+
+## Cell 4: Test Against Random
+
+```python
+from kaggle_environments import make
+
+env = make("orbit_wars", debug=True)
+env.run(["main.py", "random"])
+
+final = env.steps[-1]
+for i, state in enumerate(final):
+    print(f"Player {i}: reward={state.reward}, status={state.status}")
+
+env.render(mode="ipython", width=800, height=600)
+```
+
+## Cell 5: Test Self-Play Validation
+
+Kaggle validation runs a self-play style check. This is a local approximation.
+
+```python
+from kaggle_environments import make
+
+env = make("orbit_wars", debug=True)
+env.run(["main.py", "main.py"])
+
+final = env.steps[-1]
+for i, state in enumerate(final):
+    print(f"Player {i}: reward={state.reward}, status={state.status}")
+```
+
+## Submit
+
+After `main.py` is created and local tests finish without errors, use Kaggle's `Submit to competition` button.
+
+Submission message:
+
+```text
+nearest target baseline v1
+```
