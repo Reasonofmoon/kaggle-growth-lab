@@ -1,0 +1,41 @@
+# Secrets
+kaggle.json
+.env
+.env.*
+
+# Data
+data/
+input/
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Models
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+
+# Logs and local outputs
+outputs/
+runs/
+mlruns/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
