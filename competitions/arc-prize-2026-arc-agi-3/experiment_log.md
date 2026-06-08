@@ -92,3 +92,36 @@ A public starter baseline can teach the submission flow even if the score is low
 ### Interpretation
 
 ### Decision
+
+---
+
+## exp_001a_baseline_candidate_review
+
+Date: 2026-06-08
+
+### Hypothesis
+
+Reviewing candidate notebook snippets before submitting will reduce the risk of starting with an overly complex agent.
+
+### Change
+
+- Reviewed random baseline notebook flow
+- Reviewed just-explore heuristic notebook flow
+- Reviewed StochasticGoose / CNN action-learning notebook flow
+- Added a Kaggle cell-by-cell random baseline reference
+
+### Result
+
+| Candidate | First-use decision | Reason |
+|---|---|---|
+| Random baseline | Use first | Minimal, official framework, easiest to debug |
+| Just-explore heuristic | Use second | More meaningful but external-source dependent |
+| StochasticGoose / CNN | Study later | Complex, third-party code, higher runtime risk |
+
+### Interpretation
+
+The best immediate next step is not to improve the agent. It is to confirm the competition rerun, gateway, agent registration, and submission artifact flow.
+
+### Decision
+
+Use `notebooks/01_random_baseline_kaggle_cells.md` for the first attempt.

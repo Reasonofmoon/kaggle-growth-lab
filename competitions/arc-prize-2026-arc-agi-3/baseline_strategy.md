@@ -22,6 +22,11 @@ What to record:
 - score if available
 - one thing that failed or confused me
 
+Implementation note:
+
+- Use `notebooks/01_random_baseline_kaggle_cells.md` for the first Kaggle submission attempt.
+- This version samples from `latest_frame.available_actions` when possible, instead of choosing blindly from every `GameAction`.
+
 ## Baseline 2: Action-Probing Agent
 
 Goal:
@@ -106,3 +111,11 @@ class ProbingAgent:
 - what metadata is available in `latest_frame`
 - whether a generic exploration policy has any useful signal
 - what needs to be game-specific vs general
+
+## Candidate Escalation
+
+After the first accepted random baseline:
+
+1. Review `notes/baseline_candidate_review.md`.
+2. Try the just-explore heuristic if the external dataset/source setup is clear.
+3. Study StochasticGoose / CNN action-learning as an implementation reference, but do not copy it into this repository without license verification and clear attribution.

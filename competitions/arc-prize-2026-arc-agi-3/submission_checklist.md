@@ -20,6 +20,7 @@ Use this checklist before making the first ARC-AGI-3 baseline submission.
 
 ## Notebook Run
 
+- [ ] Start with `notebooks/01_random_baseline_kaggle_cells.md`
 - [ ] Run one official starter notebook or public baseline
 - [ ] Confirm all cells execute
 - [ ] Inspect `ARC-AGI-3-Agents/`
@@ -36,6 +37,14 @@ Use this checklist before making the first ARC-AGI-3 baseline submission.
 - [ ] Record whether the submission was accepted
 - [ ] Record public leaderboard score if available
 - [ ] Decide whether to make one small follow-up experiment
+
+## Before Trying Stronger Public Agents
+
+- [ ] Confirm random baseline submission is accepted
+- [ ] Attribute any public code used
+- [ ] Verify license before copying third-party code into GitHub
+- [ ] Record external Kaggle datasets added to the notebook
+- [ ] Keep a clean comparison against the random baseline
 
 ## GitHub Update After Submission
 
