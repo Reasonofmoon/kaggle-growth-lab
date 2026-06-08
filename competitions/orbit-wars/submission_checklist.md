@@ -12,10 +12,12 @@
 - [ ] Place submission code at `main.py`
 - [ ] Confirm `agent(obs)` exists
 - [ ] Run tutorial environment inspection cells
+- [ ] If the notebook/browser freezes, switch to `notebooks/02_lightweight_submission_cells.md`
 - [ ] Run against `random`
 - [ ] Run self-play against `main.py`
 - [ ] Confirm no timeout or exception
 - [ ] Inspect final rewards/status
+- [ ] Skip `env.render(...)` until after the first accepted submission
 
 Suggested local command:
 
