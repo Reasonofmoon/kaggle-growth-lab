@@ -18,3 +18,4 @@ Keep raw Kaggle data outside Git. Document how to download it instead of committ
 ## Active competition workspaces
 
 - [Kaggriculture Capstone](kaggriculture/README.md)
+- [ARC Prize 2026 - ARC-AGI-3](arc-prize-2026-arc-agi-3/README.md)
