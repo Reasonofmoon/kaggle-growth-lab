@@ -51,6 +51,8 @@ Unlike static tasks, the agent must:
 - plan and execute actions
 - adapt when feedback contradicts its assumptions
 
+The game state is delivered as frames: JSON objects containing a grid and metadata. The grid is at most 64x64, uses integer cell values from 0 to 15, and follows a top-left `(0, 0)` coordinate system.
+
 ## 4. Important Constraints
 
 - Evaluation happens through the designated Kaggle competition.
@@ -60,6 +62,8 @@ Unlike static tasks, the agent must:
 - Competition code and data sharing must follow Kaggle rules.
 - Team size limit is 8.
 - Daily submission limit is 5.
+- The private evaluation uses games the agent has not seen.
+- The meaning of actions varies by game and must be inferred through exploration.
 
 ## 5. Timeline Notes
 
@@ -87,6 +91,12 @@ Planned steps:
 4. Inspect the generated submission.
 5. Submit once.
 6. Record what happened in `experiment_log.md`.
+
+Supporting notes:
+
+- [Dataset notes](dataset_notes.md)
+- [Baseline strategy](baseline_strategy.md)
+- [Submission checklist](submission_checklist.md)
 
 ## 7. Experiments
 

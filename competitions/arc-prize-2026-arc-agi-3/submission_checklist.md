@@ -22,6 +22,9 @@ Use this checklist before making the first ARC-AGI-3 baseline submission.
 
 - [ ] Run one official starter notebook or public baseline
 - [ ] Confirm all cells execute
+- [ ] Inspect `ARC-AGI-3-Agents/`
+- [ ] Inspect `environment_files/`
+- [ ] Inspect `arc_agi_3_wheels/`
 - [ ] Locate generated submission artifact
 - [ ] Inspect submission format
 - [ ] Save notes in `experiment_log.md`
@@ -38,5 +41,7 @@ Use this checklist before making the first ARC-AGI-3 baseline submission.
 
 - [ ] Update `experiment_log.md`
 - [ ] Update `README.md` experiment table
+- [ ] Update `dataset_notes.md` if the actual files differ from my notes
+- [ ] Update `baseline_strategy.md` with what the starter agent actually does
 - [ ] Add notes under `notes/`
 - [ ] Commit with `exp: log arc agi 3 baseline submission`
