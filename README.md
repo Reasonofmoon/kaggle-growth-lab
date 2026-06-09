@@ -78,5 +78,6 @@ When starting a new competition, copy `competitions/_template` and rename the co
 
 - [AI Agents Intensive 2026](learn/ai_agents_intensive_2026/README.md)
 - [Kaggriculture Capstone](competitions/kaggriculture/README.md)
+- [ROGII - Wellbore Geology Prediction](competitions/rogii-wellbore-geology-prediction/README.md)
 - [Orbit Wars](competitions/orbit-wars/README.md)
 - [ARC Prize 2026 - ARC-AGI-3](competitions/arc-prize-2026-arc-agi-3/README.md)
