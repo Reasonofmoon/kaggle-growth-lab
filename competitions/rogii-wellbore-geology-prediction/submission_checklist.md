@@ -10,6 +10,8 @@
 
 ## Data Inspection
 
+- [ ] Confirm competition data is attached under `/kaggle/input`
+- [ ] If data is missing, use `Add Input` or accept rules on the competition page
 - [ ] List files under `/kaggle/input/rogii-wellbore-geology-prediction`
 - [ ] Count train wells
 - [ ] Count visible test wells

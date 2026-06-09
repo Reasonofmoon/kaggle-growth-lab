@@ -12,7 +12,23 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-DATA_DIR = Path("/kaggle/input/rogii-wellbore-geology-prediction")
+DATA_ROOT_CANDIDATES = [
+    Path("/kaggle/input/rogii-wellbore-geology-prediction"),
+    Path("/kaggle/input/competitions/rogii-wellbore-geology-prediction"),
+]
+
+DATA_DIR = next((path for path in DATA_ROOT_CANDIDATES if path.exists()), None)
+
+if DATA_DIR is None:
+    print("Could not find ROGII competition data.")
+    print("Available /kaggle/input entries:")
+    for path in sorted(Path("/kaggle/input").glob("*")):
+        print("-", path)
+    raise FileNotFoundError(
+        "Attach the ROGII competition dataset through Add Input, "
+        "or accept the competition rules first."
+    )
+
 TRAIN_DIR = DATA_DIR / "train"
 TEST_DIR = DATA_DIR / "test"
 SAMPLE_PATH = DATA_DIR / "sample_submission.csv"
