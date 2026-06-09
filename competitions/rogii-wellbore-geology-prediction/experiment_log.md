@@ -19,11 +19,11 @@ ROGII is a strong standard ML portfolio track because it supports EDA, validatio
 
 | Item | Status |
 |---|---|
-| Competition joined | TODO |
-| Rules accepted | TODO |
-| Dataset inspected | TODO |
-| Baseline notebook created | TODO |
-| First submission | TODO |
+| Competition joined | DONE |
+| Rules accepted | DONE |
+| Dataset inspected | DONE |
+| Baseline notebook created | DONE |
+| First submission | DONE |
 
 ### Interpretation
 
@@ -61,7 +61,7 @@ A constant or median baseline can verify the notebook-only submission pipeline.
 
 ## exp_002_tvt_input_interpolation
 
-Date:
+Date: 2026-06-09
 
 ### Hypothesis
 
@@ -69,16 +69,31 @@ Interpolating `TVT_input` within each well can create a strong simple baseline b
 
 ### Change
 
+- Created Kaggle notebook `notebook7f0789fa3b`
+- Attached the ROGII competition data
+- Confirmed 773 train horizontal well files and 3 visible example test horizontal well files
+- Read `sample_submission.csv` with 14151 rows
+- Generated `submission.csv` using `TVT_input` interpolation and median fallback
+- Disabled internet and submitted through Kaggle Notebooks
+
 ### Result
 
 | Metric / Output | Value |
 |---|---|
-| Local validation RMSE | TBD |
-| Public RMSE | TBD |
+| submission.csv rows | 14151 |
+| submission.csv columns | `id,tvt` |
+| NaN count | 0 |
+| Public RMSE | 15.883 |
+| Kaggle status | Succeeded |
+| Notebook | `notebook7f0789fa3b` |
 
 ### Interpretation
 
+The first valid submission establishes the notebook-only submission pipeline. The score is a baseline, not a model-quality claim. The interpolation approach is likely weak where evaluation zones are long or where known `TVT_input` anchors are sparse.
+
 ### Decision
+
+Keep this as the first public benchmark. Next work should focus on validation design and a stronger well-aware baseline before using advanced public ridge/PF references.
 
 ---
 

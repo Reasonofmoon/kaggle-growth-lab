@@ -2,52 +2,52 @@
 
 ## Kaggle Setup
 
-- [ ] Join competition
-- [ ] Accept rules to access data
-- [ ] Create Kaggle Notebook
-- [ ] Confirm internet is disabled
-- [ ] Confirm output file is named `submission.csv`
+- [x] Join competition
+- [x] Accept rules to access data
+- [x] Create Kaggle Notebook
+- [x] Confirm internet is disabled
+- [x] Confirm output file is named `submission.csv`
 
 ## Data Inspection
 
-- [ ] Confirm competition data is attached under `/kaggle/input`
-- [ ] If data is missing, use `Add Input` or accept rules on the competition page
+- [x] Confirm competition data is attached under `/kaggle/input`
+- [x] If data is missing, use `Add Input` or accept rules on the competition page
 - [ ] List files under `/kaggle/input/rogii-wellbore-geology-prediction`
-- [ ] Count train wells
-- [ ] Count visible test wells
-- [ ] Read `sample_submission.csv`
-- [ ] Inspect one train horizontal well
-- [ ] Inspect one train typewell
+- [x] Count train wells
+- [x] Count visible test wells
+- [x] Read `sample_submission.csv`
+- [x] Inspect one train horizontal well
+- [x] Inspect one train typewell
 - [ ] Inspect one test horizontal well
 - [ ] Check missing `TVT_input` rows
 
 ## Baseline
 
 - [ ] Generate constant baseline
-- [ ] Generate `TVT_input` interpolation baseline
-- [ ] Verify all sample submission ids are filled
-- [ ] Verify no NaN in `submission.csv`
-- [ ] Verify columns are exactly `id,tvt`
+- [x] Generate `TVT_input` interpolation baseline
+- [x] Verify all sample submission ids are filled
+- [x] Verify no NaN in `submission.csv`
+- [x] Verify columns are exactly `id,tvt`
 
 ## Public Notebook / External Artifact Safety
 
 - [ ] Do not use public solution code as my own without attribution
 - [ ] Record every public notebook referenced
 - [ ] Record every attached public artifact dataset
-- [ ] Verify code runs with internet disabled
+- [x] Verify code runs with internet disabled
 - [ ] Keep a simple baseline comparison before using advanced public references
 - [ ] Check final submission contract: columns, row count, id order, finite numeric `tvt`
 
 ## Submit
 
-- [ ] Save notebook version
-- [ ] Confirm runtime <= 9 hours
-- [ ] Confirm `submission.csv` appears in output
-- [ ] Submit to competition
-- [ ] Record public score
+- [x] Save notebook version
+- [x] Confirm runtime <= 9 hours
+- [x] Confirm `submission.csv` appears in output
+- [x] Submit to competition
+- [x] Record public score
 
 ## After Submission
 
-- [ ] Update `experiment_log.md`
-- [ ] Update `submissions/README.md`
+- [x] Update `experiment_log.md`
+- [x] Update `submissions/README.md`
 - [ ] Commit with `exp: log rogii baseline submission`
