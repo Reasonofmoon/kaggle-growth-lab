@@ -27,6 +27,15 @@
 - [ ] Verify no NaN in `submission.csv`
 - [ ] Verify columns are exactly `id,tvt`
 
+## Public Notebook / External Artifact Safety
+
+- [ ] Do not use public solution code as my own without attribution
+- [ ] Record every public notebook referenced
+- [ ] Record every attached public artifact dataset
+- [ ] Verify code runs with internet disabled
+- [ ] Keep a simple baseline comparison before using advanced public references
+- [ ] Check final submission contract: columns, row count, id order, finite numeric `tvt`
+
 ## Submit
 
 - [ ] Save notebook version

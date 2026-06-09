@@ -85,6 +85,27 @@ Initial ideas:
 
 This should come after the simple interpolation baseline.
 
+## Advanced Public Reference: Ridge Artifact / PF Projection
+
+The pasted public notebook `ROGII Ridge Artifact Projection D4 - Koolbox Fallback` is an advanced reference, not a first baseline.
+
+Key concepts to study later:
+
+- blend a saved ridge estimate with a physical / particle-filter heuristic
+- tune particle count, seed count, and initial TVT spread
+- smooth the trajectory with a robust per-well projection in `U = TVT + Z - anchor`
+- keep a final submission contract guard for `id,tvt`, row count, id order, and finite predictions
+
+Do not copy this directly as my first submission.
+
+Use it after:
+
+1. own EDA
+2. interpolation baseline
+3. valid `submission.csv`
+4. well-level validation notes
+5. attribution and dependency review
+
 ## Minimum Experiment Order
 
 1. `exp_001_constant_submission`
@@ -92,3 +113,4 @@ This should come after the simple interpolation baseline.
 3. `exp_003_group_validation_split`
 4. `exp_004_light_tabular_model`
 5. `exp_005_typewell_correlation_features`
+6. `exp_006_public_ridge_artifact_review`
