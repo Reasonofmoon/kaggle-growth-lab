@@ -4,6 +4,20 @@ Kaggle: https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction
 
 This is a notebook-only regression competition for predicting `tvt` along horizontal wellbores.
 
+## Current Result
+
+First valid Kaggle notebook submission completed.
+
+| Item | Value |
+|---|---|
+| Public RMSE | 15.883 |
+| Kaggle status | Succeeded |
+| Notebook | `notebook7f0789fa3b` |
+| Version | V2 |
+| Runtime | 36s |
+| Baseline | `TVT_input` interpolation with median fallback |
+| Evidence | [submission screenshot](assets/rogii_v2_public_score_15.883.png) |
+
 ## 1. Goal
 
 Build a model that predicts True Vertical Thickness (`tvt`) for evaluation zones in horizontal wells.
