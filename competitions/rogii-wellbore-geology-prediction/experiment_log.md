@@ -86,6 +86,7 @@ Interpolating `TVT_input` within each well can create a strong simple baseline b
 | Public RMSE | 15.883 |
 | Kaggle status | Succeeded |
 | Notebook | `notebook7f0789fa3b` |
+| Evidence screenshot | `assets/rogii_v2_public_score_15.883.png` |
 
 ### Interpretation
 
