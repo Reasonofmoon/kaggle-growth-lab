@@ -21,6 +21,7 @@ Each competition or dataset project will include:
 
 ## Current focus
 
+- Getting Started competitions for core Kaggle workflow
 - Kaggle progression and badges
 - Playground competitions
 - 5-Day AI Agents Intensive with Google
@@ -76,7 +77,9 @@ When starting a new competition, copy `competitions/_template` and rename the co
 
 ## Active tracks
 
+- [Getting Started competitions roadmap](learn/getting_started_competitions/README.md)
 - [AI Agents Intensive 2026](learn/ai_agents_intensive_2026/README.md)
+- [Titanic - Machine Learning from Disaster](competitions/titanic/README.md)
 - [Kaggriculture Capstone](competitions/kaggriculture/README.md)
 - [ROGII - Wellbore Geology Prediction](competitions/rogii-wellbore-geology-prediction/README.md)
 - [Orbit Wars](competitions/orbit-wars/README.md)
